@@ -18,3 +18,20 @@ touch script.js
 ```
 3. Add the function to convert temparature from Celsius to Fahrenheit
 
+```js
+function temperature() {
+    var c = document.getElementById("celsius").value
+    var f = (c * 9/5) + 32
+    document.getElementById("fahrenheit").value = f
+}
+```
+
+4. Link the temperature section of index.html to the temperature function in script.js
+
+```html
+<button id="temperature" onclick="temperature()"> Convert </button> <br/>
+```
+
+![Alt text](img/temperature.png "temperature function")
+
+5. Do the same for `weight `and `distance`
