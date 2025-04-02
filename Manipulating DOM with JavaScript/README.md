@@ -107,7 +107,7 @@ function addTask(){
     ```js
     ul.appendChild(li);
     ```
-- clear `<input>` afeter each isertion
+- clear `<input>` afeter each insertion
 
     ```js
     input.value = "";
