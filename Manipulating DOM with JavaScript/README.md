@@ -55,7 +55,7 @@ function addTask(){
 3. `If` input is not empty create the `li` tag element that hold the task, `else` create an `alert` message
 
 ```js
-    if(taskText != "") {
+    if(taskText !== "") {
             // ... Create task code block
     } else {
             alert("Please enter a valid task:")
@@ -114,3 +114,69 @@ function addTask(){
     ```
 
 ![Alt text](img/add-task.png "a title")
+
+## Editing a task in the To-Do List
+
+- When the user clicks the Edit button next to a task, they will be prompted to enter a new task text.
+- If the user enters a valid new task text (non-empty), the task will be updated dynamically in the list.
+- The task text will only be updated if the user provides a non-empty input.
+
+1. Set up the Edit function
+
+    ```js
+    function editTask(span){
+            // edit task logic
+        }
+    ```
+
+2.  Use the `prompt()` method to ask the user for a new task
+
+    ```js
+    const newTask = prompt("Edit your task:", span.textContent);
+    ```
+    - `span.textContent` value  is pass as a default value
+
+3. Check for valid input
+
+    ```js
+    if(newTask.trim() !== "") {
+            // if true update the task
+        }
+    ```
+
+4. Update the task
+
+    ```js
+        span.textContent = newTask.trim(); 
+    ```
+    - to the old value `span.textContent` is assigned the newest value
+
+
+![Alt text](img/edit-task.png "a title")
+
+
+## Removing a task from the To-Do List
+
+- When the user clicks the Delete button next to a task, the task will be removed from the list.
+- The task will be removed dynamically from the unordered list.
+
+1. Set up the `removeTask()` function
+
+    ```js
+    function removeTask(task){
+        // function logic
+    }
+    ```
+
+2. Selecting the unordered list `<ul>` that contains the tasks
+
+    ```js
+        const ul = document.getElementById("todoList");
+    ```
+
+3. Removing the task
+
+    ```js
+    ul.removeChild(task);
+    ```
+    - `task` is passed into the function as the specific task represented by the `<li>` like this `() => removeTask(li)`
